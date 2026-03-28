@@ -55,12 +55,12 @@ echo OK: theme-cli.exe built
 REM 4. Build simple GUI version
 echo.
 echo 4. Building simple GUI version...
-go build -ldflags "-H windowsgui" -o bin\ThemeSwitcher.exe simple-gui.go
+go build -ldflags "-H windowsgui" -o bin\theme-switcher.exe simple-gui.go
 if %errorlevel% neq 0 (
     echo ERROR: Simple GUI build failed
     set "GUI_ERROR=1"
 ) else (
-    echo OK: ThemeSwitcher.exe built
+    echo OK: theme-switcher.exe built
 )
 
 echo.
@@ -70,7 +70,7 @@ echo.
 echo Available versions:
 echo   - bin\theme-cli.exe      (CLI version)
 if not defined GUI_ERROR (
-    echo   - bin\ThemeSwitcher.exe  (Simple GUI version)
+    echo   - bin\theme-switcher.exe  (Simple GUI version)
 )
 echo ========================================
 goto :end
